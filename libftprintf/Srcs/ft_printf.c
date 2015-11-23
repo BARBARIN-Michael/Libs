@@ -6,7 +6,7 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/17 13:43:14 by mbarbari          #+#    #+#             */
-/*   Updated: 2015/05/31 15:45:13 by mbarbari         ###   ########.fr       */
+/*   Updated: 2015/10/02 16:56:56 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static t_opt	process_flag(va_list *lsti, t_var *v, t_fcts_flag *fcts)
 	while (*v->s1)
 	{
 		c = *v->s1;
-		v->s1 = fcts[c] != NULL ? fcts[c](v->s1, &opt) : v->s1;
+		v->s1 = FCT_PTR != NULL ? FCT_PTR(v->s1, &opt) : v->s1;
 		if (ft_isdigit(*v->s1) && opt.opt_dot != 1 && *v->s1 != '0')
 			v->s1 = handle_lenght(v->s1, &opt);
 		*v->s1 == '*' ? v->s1++, handle_star(&opt, 0) : 0;

@@ -6,7 +6,7 @@
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/17 13:46:00 by mbarbari          #+#    #+#             */
-/*   Updated: 2015/06/09 17:20:44 by mbarbari         ###   ########.fr       */
+/*   Updated: 2015/10/02 16:55:04 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@
 # define BASE_10    "0123456789"
 # define BASE_8     "01234567"
 # define BASE_2     "01"
+
+# define FCT_PTR fcts[c]
 
 typedef struct	s_opt
 {
