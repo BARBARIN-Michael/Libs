@@ -6,7 +6,7 @@
 #    By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 14:48:04 by mbarbari          #+#    #+#              #
-#    Updated: 2015/09/30 15:49:44 by mbarbari         ###   ########.fr        #
+#    Updated: 2015/11/23 18:29:39 by root             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -105,7 +105,7 @@ INC = $(PINC)def.h $(PINC)ft_checking.h $(PINC)get_next_line.h $(PINC)libft.h
 RM = rm -f
 
 
-all: $(NAME)
+all: Objets $(NAME)
 
 Objets:
 	@mkdir -p $@
