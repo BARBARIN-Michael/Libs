@@ -1,104 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsplit.c                                      :+:      :+:    :+:   */
+/*   ft_strsplit_v2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbarbari <mbarbari@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/09 22:25:09 by mbarbari          #+#    #+#             */
-/*   Updated: 2015/03/27 18:50:11 by mbarbari         ###   ########.fr       */
+/*   Created: 2016/01/08 11:26:49 by mbarbari          #+#    #+#             */
+/*   Updated: 2016/01/08 13:11:30 by barbare          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
+#include <stdio.h>
 
-static int		is_carac(char str, char c)
+static unsigned int	count_car(char *s, char c)
 {
-	if (str == c)
-		return (1);
-	return (0);
-}
-
-static char		**ft_create_tab(int len)
-{
-	char	**str;
-
-	str = (char **)malloc(sizeof(char *) * len);
-	if (str)
-		return (str);
-	return (NULL);
-}
-
-int				ft_count_split(char *str, char c)
-{
-	int		i;
-	int		count;
+	unsigned int i;
 
 	i = 0;
-	count = 0;
-	while (str[i])
-	{
-		while (is_carac(str[i], c))
-			i++;
-		if (str[i])
-			count++;
-		while (str[i] && !is_carac(str[i], c))
-			i++;
-	}
-	return (count);
+	while (*(++s))
+		if (*s == c && (s[-1] != c && s[1] != '\0'))
+			++i;
+	return (++i);
 }
-
-char			**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *str, char c)
 {
-	char	**ret;
-	int		i;
-	int		j;
-	int		k;
-	int		len;
+	char			*save;
+	char			**ptr;
+	unsigned int	cmp;
 
-	if (!s)
+	cmp = -1;
+	if (!str)
 		return (NULL);
-	len = ft_count_split((char *)s, c);
-	i = 0;
-	j = 0;
-	ret = ft_create_tab(len + 1);
-	while (s[i])
-	{
-		while (is_carac(s[i], c))
-			i++;
-		k = i;
-		while (s[i] && !is_carac(s[i], c))
-			i++;
-		if (j != len)
-			ret[j++] = ft_strsub(s, k, (i - k));
-	}
-	ret[len] = NULL;
-	return (ret);
-}
-
-char			**ft_nstrsplit(char const *s, char c, int len)
-{
-	char	**ret;
-	int		i;
-	int		j;
-	int		k;
-
-	if (!s)
-		return (NULL);
-	i = 0;
-	j = 0;
-	ret = ft_create_tab(len + 1);
-	while (s[i])
-	{
-		while (is_carac(s[i], c))
-			i++;
-		k = i;
-		while (s[i] && !is_carac(s[i], c))
-			i++;
-		if (j != len)
-			ret[j++] = ft_strsub(s, k, (i - k));
-	}
-	ret[len] = NULL;
-	return (ret);
+	save = ft_strdup(str);
+	ptr = malloc(sizeof(char *) * (count_car((char *)str, c) + 1));
+	ptr[(++cmp)] = &save[0];
+	while (*(++save))
+		if (*save == c)
+		{
+			*save = 0;
+			if (save[1] == '\0' || save[1] == c)
+				continue ;
+			ptr[(++cmp)] = &save[1];
+		}
+	ptr[(++cmp)] = NULL;
+	return (ptr);
 }

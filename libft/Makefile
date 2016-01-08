@@ -6,7 +6,7 @@
 #    By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 14:48:04 by mbarbari          #+#    #+#              #
-#    Updated: 2016/01/08 11:39:07 by mbarbari         ###   ########.fr        #
+#    Updated: 2016/01/08 13:17:26 by barbare          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,8 +49,6 @@ SRCS = 	Srcs/ft_bzero.c			\
 		Srcs/ft_strjoin_free.c	\
 		Srcs/ft_strtrim.c		\
 		Srcs/ft_strsplit.c		\
-		Srcs/ft_strsplit_v2.c	\
-		Srcs/ft_ptrsplit.c		\
 		Srcs/ft_strtol.c		\
 		Srcs/ft_atoi.c			\
 		Srcs/ft_isalpha.c		\
