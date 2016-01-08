@@ -6,7 +6,7 @@
 /*   By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/03 14:05:43 by mbarbari          #+#    #+#             */
-/*   Updated: 2015/06/09 17:22:12 by mbarbari         ###   ########.fr       */
+/*   Updated: 2016/01/08 11:43:52 by mbarbari         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,6 +145,7 @@ char				*ft_strndup(const char *str, size_t n);
 char				*ft_strsub(char const *s1, unsigned int start, size_t len);
 char				*ft_wstrsub(char const *s1, unsigned int s, size_t len);
 char				**ft_strsplit(char const *s, char c);
+char				**ft_strsplit_v2(char const *s, char c);
 char				**ft_ptrsplit(char *str, int c);
 char				**ft_nstrsplit(char const *s, char c, int nbr_val);
 char				*ft_strcpy(char *dst, char *src);
