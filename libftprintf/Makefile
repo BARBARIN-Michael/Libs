@@ -6,7 +6,7 @@
 #    By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 14:48:04 by mbarbari          #+#    #+#              #
-#    Updated: 2015/11/23 18:12:37 by root             ###   ########.fr        #
+#    Updated: 2016/04/07 17:16:48 by mbarbari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -46,25 +46,23 @@ all: $(NAME)
 $(OBJS): | Objets
 
 Objets:
-	@mkdir -p $@
+	mkdir -p $@
 
 Objets/%.o: Srcs/%.c
-	@printf "\r\033[33;32mCompiling $<\n\033[33;0m"
-	@$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
 $(NAME): $(LIBFT_PATH)/libft.a $(OBJS) 
-	@printf "\r\033[33;40mCreate Library $(NAME)\n\033[33;0m"
-	@$(CP) $(LIBFT_PATH)/libft.a $(NAME)
-	@$(AR) -rcs $(NAME) $^
+	$(CP) $(LIBFT_PATH)/libft.a $(NAME)
+	$(AR) -rcs $(NAME) $^
 
 $(LIBFT_PATH)/libft.a:
-	@$(MAKE) -C $(LIBFT_PATH)
+	$(MAKE) -C $(LIBFT_PATH)
 
 clean:
-	@$(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

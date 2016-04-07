@@ -6,7 +6,7 @@
 #    By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 14:48:04 by mbarbari          #+#    #+#              #
-#    Updated: 2015/10/22 12:50:22 by barbare          ###   ########.fr        #
+#    Updated: 2016/04/07 17:13:58 by mbarbari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,10 +17,10 @@ OBJDIR = ./Objets
 LIBS = -L../libft/ -lft 
 INC =  -I ../libft/Include/
 
-CFLAGS += -g -O0 -Wall -Wextra -Werror -I ./Include/ $(INC)
+CFLAGS += -O3 -Wall -Wextra -Werror -I ./Include/ $(INC)
 
 SRCS = 	Srcs/ft_stream_new.c			\
-	Srcs/ft_stream_read.c			\
+	Srcs/ft_stream_read.c
 
 LIBFT_PATH ?= ../libft/
 
@@ -38,22 +38,20 @@ Objets:
 	@mkdir -p $@
 
 Objets/%.o: Srcs/%.c
-	@printf "\r\033[33;32mCompiling $<\n\033[33;0m"
-	@$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
 $(LIBFT_PATH)/libft.a:
-	@$(MAKE) -C $(LIBFT_PATH)/libft
+	$(MAKE) -C $(LIBFT_PATH)
 
 $(NAME): $(LIBFT_PATH)/libft.a $(OBJS) 
-	@printf "\r\033[33;40mCreate Library $(NAME)\n\033[33;0m"
-	@$(CP) $(LIBFT_PATH)/libft.a $(NAME)
-	@$(AR) -rcs $(NAME) $^
+	$(CP) $(LIBFT_PATH)/libft.a $(NAME)
+	$(AR) -rcs $(NAME) $^
 
 clean:
-	@$(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
 

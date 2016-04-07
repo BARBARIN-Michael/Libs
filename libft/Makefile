@@ -6,14 +6,14 @@
 #    By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 14:48:04 by mbarbari          #+#    #+#              #
-#    Updated: 2016/01/08 13:17:26 by barbare          ###   ########.fr        #
+#    Updated: 2016/04/07 17:15:19 by mbarbari         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libft.a
 
-CFLAGS += -g -O0 -Wall -Wextra -Werror -I ./Include/ -I ./../libftprintf/Include
+CFLAGS += -O3 -Wall -Wextra -Werror -I ./Include/ -I ./../libftprintf/Include
 
 SRCS = 	Srcs/ft_bzero.c			\
 		Srcs/ft_memcpy.c		\
@@ -103,28 +103,25 @@ INC = $(PINC)def.h $(PINC)ft_checking.h $(PINC)get_next_line.h $(PINC)libft.h
 
 RM = rm -f
 
-
 all: Objets $(NAME)
 
 Objets:
-	@mkdir -p $@
+	mkdir -p $@
 
 Objets/%.o: Srcs/%.c $(INC)
-	@printf "\r\033[33;32mCompiling $<\033[33;0m\n"
-	@$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
+	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
 $(NAME): $(OBJS)
-	@printf "\r\033[33;40mCreate Library $(NAME)\033[33;0m\n"
-	@$(AR) -rsc $(NAME) $?
+	$(AR) -rsc $(NAME) $?
 
 clean:
-	@$(RM) $(OBJS)
+	$(RM) $(OBJS)
 
 fclean: clean
-	@$(RM) $(NAME)
+	$(RM) $(NAME)
 
 fcleanall: fclean
-	@$(RM) $(EXE)
+	$(RM) $(EXE)
 
 re: fclean Objets all
 
