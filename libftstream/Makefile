@@ -6,25 +6,29 @@
 #    By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 14:48:04 by mbarbari          #+#    #+#              #
-#    Updated: 2016/04/07 17:13:58 by mbarbari         ###   ########.fr        #
+#    Updated: 2017/01/17 14:46:28 by barbare          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftstream.a
+CC = gcc
 
-OBJDIR = ./Objets
+OBJDIR = ./obj
 
 LIBS = -L../libft/ -lft 
-INC =  -I ../libft/Include/
+INC =  -I ../libft/include/
 
-CFLAGS += -O3 -Wall -Wextra -Werror -I ./Include/ $(INC)
+CFLAGS += -Wall -Wextra -Werror -I ./include/ $(INC)
 
-SRCS = 	Srcs/ft_stream_new.c			\
-	Srcs/ft_stream_read.c
+SRCS = 	src/ft_stream_new.c			\
+		src/ft_stream_cursor.c		\
+		src/ft_stream_get.c			\
+		src/ft_stream_read.c		\
+		src/ft_stream_reset.c
 
 LIBFT_PATH ?= ../libft/
 
-OBJS = $(patsubst Srcs/%.c,Objets/%.o,$(SRCS))
+OBJS = $(patsubst src/%.c,obj/%.o,$(SRCS))
 
 CP = cp
 
@@ -32,12 +36,12 @@ RM = rm -f
 
 all: $(NAME)
 
-$(OBJS): | Objets
+$(OBJS): | obj
 
-Objets:
+obj:
 	@mkdir -p $@
 
-Objets/%.o: Srcs/%.c
+obj/%.o: src/%.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
 $(LIBFT_PATH)/libft.a:

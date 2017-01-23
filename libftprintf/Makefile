@@ -6,36 +6,36 @@
 #    By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 14:48:04 by mbarbari          #+#    #+#              #
-#    Updated: 2016/04/07 17:16:48 by mbarbari         ###   ########.fr        #
+#    Updated: 2017/01/03 16:38:22 by barbare          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 EXE = a.out
 
-OBJDIR = ./Objets
+OBJDIR = ./obj
 
 LIBS = -L../libft/ -lft 
-INC =  -I ../libft/Include/
-CFLAGS += -g -O0 -Wall -Wextra -Werror -I ./Include/ $(INC)
+INC =  -I ../libft/include/
+CFLAGS += -g -O0 -Wall -Wextra -Werror -I ./include/ $(INC)
 
-SRCS =	Srcs/ft_printf.c \
-		Srcs/ft_setup.c \
-		Srcs/handle_flag_f.c \
-		Srcs/handle_flag_s.c \
-		Srcs/handle_format.c \
-		Srcs/handle_modifier.c \
-		Srcs/ft_integer.c \
-		Srcs/ft_pointer.c \
-		Srcs/ft_string.c \
-		Srcs/ft_hexa.c \
-		Srcs/ft_printf_replace.c \
-		Srcs/ft_make_format.c \
-		Srcs/ft_make_format2.c
+SRCS =	src/ft_printf.c \
+		src/ft_setup.c \
+		src/handle_flag_f.c \
+		src/handle_flag_s.c \
+		src/handle_format.c \
+		src/handle_modifier.c \
+		src/ft_integer.c \
+		src/ft_pointer.c \
+		src/ft_string.c \
+		src/ft_hexa.c \
+		src/ft_printf_replace.c \
+		src/ft_make_format.c \
+		src/ft_make_format2.c
 
 LIBFT_PATH ?= ../libft
 
-OBJS = $(patsubst Srcs/%.c,Objets/%.o,$(SRCS))
+OBJS = $(patsubst src/%.c,obj/%.o,$(SRCS))
 
 CP = cp
 
@@ -43,12 +43,12 @@ RM = rm -f
 
 all: $(NAME)
 
-$(OBJS): | Objets
+$(OBJS): | obj
 
-Objets:
+obj:
 	mkdir -p $@
 
-Objets/%.o: Srcs/%.c
+obj/%.o: src/%.c
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
 $(NAME): $(LIBFT_PATH)/libft.a $(OBJS) 

@@ -6,109 +6,111 @@
 #    By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 14:48:04 by mbarbari          #+#    #+#              #
-#    Updated: 2016/04/07 17:15:19 by mbarbari         ###   ########.fr        #
+#    Updated: 2017/01/03 16:39:40 by barbare          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 NAME = libft.a
 
-CFLAGS += -O3 -Wall -Wextra -Werror -I ./Include/ -I ./../libftprintf/Include
+CFLAGS += -O3 -Wall -Wextra -Werror -I ./include/ -I ./../libftprintf/include
 
-SRCS = 	Srcs/ft_bzero.c			\
-		Srcs/ft_memcpy.c		\
-		Srcs/ft_memccpy.c		\
-		Srcs/ft_memmove.c		\
-		Srcs/ft_memchr.c		\
-		Srcs/ft_memcmp.c		\
-		Srcs/ft_strlen.c		\
-		Srcs/ft_strdup.c		\
-		Srcs/ft_strcpy.c		\
-		Srcs/ft_strncpy.c		\
-		Srcs/ft_strcat.c		\
-		Srcs/ft_strncat.c		\
-		Srcs/ft_strlcat.c		\
-		Srcs/ft_strchr.c		\
-		Srcs/ft_findchr.c		\
-		Srcs/ft_strrchr.c		\
-		Srcs/ft_strstr.c		\
-		Srcs/ft_strchange.c		\
-		Srcs/ft_strcmp.c		\
-		Srcs/ft_strncmp.c		\
-		Srcs/ft_strnew.c		\
-		Srcs/ft_strdel.c		\
-		Srcs/ft_strclr.c		\
-		Srcs/ft_striter.c		\
-		Srcs/ft_striteri.c		\
-		Srcs/ft_strmap.c		\
-		Srcs/ft_strmapi.c		\
-		Srcs/ft_strequ.c		\
-		Srcs/ft_strnequ.c		\
-		Srcs/ft_strsub.c		\
-		Srcs/ft_strjoin.c		\
-		Srcs/ft_strjoin_free.c	\
-		Srcs/ft_strtrim.c		\
-		Srcs/ft_strsplit.c		\
-		Srcs/ft_strtol.c		\
-		Srcs/ft_atoi.c			\
-		Srcs/ft_isalpha.c		\
-		Srcs/ft_isdigit.c		\
-		Srcs/ft_isalnum.c		\
-		Srcs/ft_isascii.c		\
-		Srcs/ft_isprint.c		\
-		Srcs/ft_strisuporlow.c	\
-		Srcs/ft_toupper.c		\
-		Srcs/ft_tolower.c		\
-		Srcs/ft_count_carac.c	\
-		Srcs/ft_memalloc.c		\
-		Srcs/ft_memdel.c		\
-		Srcs/ft_memset.c		\
-		Srcs/ft_realloc.c		\
-		Srcs/ft_itoa.c			\
-		Srcs/ft_putchar.c		\
-		Srcs/ft_putstr.c		\
-		Srcs/ft_putstr_c.c		\
-		Srcs/ft_putendl.c		\
-		Srcs/ft_putnbr.c		\
-		Srcs/ft_putchar_fd.c	\
-		Srcs/ft_putstr_fd.c		\
-		Srcs/ft_putendl_fd.c	\
-		Srcs/ft_lstnew.c		\
-		Srcs/ft_lstdelone.c		\
-		Srcs/ft_lstdel.c		\
-		Srcs/ft_lstadd.c		\
-		Srcs/ft_lstadd_back.c	\
-		Srcs/ft_lstiter.c		\
-		Srcs/ft_lstmap.c		\
-		Srcs/ft_lstnew.c		\
-		Srcs/ft_replace.c		\
-		Srcs/ft_round.c			\
-		Srcs/ft_insert.c		\
-		Srcs/get_nbr_line.c		\
-		Srcs/get_next_line.c	\
-		Srcs/ft_array_count.c	\
-		Srcs/ft_pow.c			\
-		Srcs/ft_ntoa.c			\
-		Srcs/ft_strset.c		\
-		Srcs/ft_wtoa.c			\
-		Srcs/ft_tabcpy.c		\
-		Srcs/ft_strisempty.c
+SRCS = 	src/ft_bzero.c			\
+		src/ft_memcpy.c		\
+		src/ft_memccpy.c		\
+		src/ft_memmove.c		\
+		src/ft_memchr.c		\
+		src/ft_memcmp.c		\
+		src/ft_strlen.c		\
+		src/ft_strdup.c		\
+		src/ft_strcpy.c		\
+		src/ft_strncpy.c		\
+		src/ft_strcat.c		\
+		src/ft_strncat.c		\
+		src/ft_strlcat.c		\
+		src/ft_strchr.c		\
+		src/ft_findchr.c		\
+		src/ft_strrchr.c		\
+		src/ft_strstr.c		\
+		src/ft_strchange.c		\
+		src/ft_strcmp.c		\
+		src/ft_strncmp.c		\
+		src/ft_strnew.c		\
+		src/ft_strdel.c		\
+		src/ft_strclr.c		\
+		src/ft_striter.c		\
+		src/ft_striteri.c		\
+		src/ft_strmap.c		\
+		src/ft_strmapi.c		\
+		src/ft_strequ.c		\
+		src/ft_strnequ.c		\
+		src/ft_strsub.c		\
+		src/ft_strjoin.c		\
+		src/ft_strjoin_free.c	\
+		src/ft_strtrim.c		\
+		src/ft_strsplit.c		\
+		src/ft_strtol.c		\
+		src/ft_atoi.c			\
+		src/ft_isalpha.c		\
+		src/ft_isdigit.c		\
+		src/ft_isalnum.c		\
+		src/ft_isascii.c		\
+		src/ft_isprint.c		\
+		src/ft_isspace.c		\
+		src/ft_strisuporlow.c	\
+		src/ft_toupper.c		\
+		src/ft_tolower.c		\
+		src/ft_count_carac.c	\
+		src/ft_memalloc.c		\
+		src/ft_memdel.c		\
+		src/ft_memset.c		\
+		src/ft_realloc.c		\
+		src/ft_itoa.c			\
+		src/ft_putchar.c		\
+		src/ft_putstr.c		\
+		src/ft_putstr_c.c		\
+		src/ft_putendl.c		\
+		src/ft_putnbr.c		\
+		src/ft_putchar_fd.c	\
+		src/ft_putstr_fd.c		\
+		src/ft_putendl_fd.c	\
+		src/ft_lstnew.c		\
+		src/ft_lstdelone.c		\
+		src/ft_lstdel.c		\
+		src/ft_lstadd.c		\
+		src/ft_lstadd_back.c	\
+		src/ft_lstiter.c		\
+		src/ft_lstmap.c		\
+		src/ft_lstnew.c		\
+		src/ft_replace.c		\
+		src/ft_round.c			\
+		src/ft_insert.c		\
+		src/get_nbr_line.c		\
+		src/get_next_line.c	\
+		src/ft_array_count.c	\
+		src/ft_pow.c			\
+		src/ft_ntoa.c			\
+		src/ft_strset.c		\
+		src/ft_wtoa.c			\
+		src/ft_tabcpy.c		\
+		src/ft_strisempty.c	\
+		src/ft_log.c
 
 
-OBJS = $(patsubst Srcs/%.c,Objets/%.o,$(SRCS))
+OBJS = $(patsubst src/%.c,obj/%.o,$(SRCS))
 
-PINC = Include/
+PINC = include/
 
 INC = $(PINC)def.h $(PINC)ft_checking.h $(PINC)get_next_line.h $(PINC)libft.h
 
 RM = rm -f
 
-all: Objets $(NAME)
+all: obj $(NAME)
 
-Objets:
+obj:
 	mkdir -p $@
 
-Objets/%.o: Srcs/%.c $(INC)
+obj/%.o: src/%.c $(INC)
 	$(CC) -c $(CFLAGS) $(CPPFLAGS) $< -o $@
 
 $(NAME): $(OBJS)
@@ -125,4 +127,4 @@ fcleanall: fclean
 
 re: fclean Objets all
 
-.PHONY: fclean Objets all fcleanall clean
+.PHONY: fclean obj all fcleanall clean
