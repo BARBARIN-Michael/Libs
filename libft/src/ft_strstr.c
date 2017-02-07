@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+char		*ft_strstr(const char *s1, const char *s2)
 {
 	size_t		len_s2;
 
@@ -21,35 +21,35 @@ char	*ft_strstr(const char *s1, const char *s2)
 		return ((char*)s1);
 	while (s1 && *s1 != '\0')
 	{
-		if (ft_strncmp(s1, s2, len_s2) == 0)
+		if (ft_memcmp(s1, s2, len_s2) == 0)
 			return ((char*)s1);
 		s1++;
 	}
 	return (NULL);
 }
 
-char* ft_strstr2(char *str, char *substr)
+char		*ft_strstr2(char *str, char *substr)
 {
-	char *begin;
-	char *pattern;
+	char	*begin;
+	char	*pattern;
 
 	begin = str;
 	pattern = substr;
-	while (*str) 
+	while (*str)
 	{
-		while (*str && *pattern && *str == *pattern) 
+		while (*str && *pattern && *str == *pattern)
 		{
 			str++;
 			pattern++;
 		}
 		if (!*pattern)
-			return begin;
+			return (begin);
 		str = begin + 1;
 	}
-	return NULL;
+	return (NULL);
 }
 
-char	*ft_strnstr(const char *s1, const char *s2, size_t n)
+char		*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	size_t		len_s2;
 

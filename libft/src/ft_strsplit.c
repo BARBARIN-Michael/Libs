@@ -13,7 +13,7 @@
 #include "libft.h"
 #include <stdio.h>
 
-static unsigned int	count_car(char *s, char c)
+static unsigned int		count_car(char *s, char c)
 {
 	unsigned int i;
 
@@ -23,7 +23,8 @@ static unsigned int	count_car(char *s, char c)
 			++i;
 	return (++i);
 }
-char	**ft_strsplit(char const *str, char c)
+
+char					**ft_strsplit(char const *str, char c)
 {
 	char			*save;
 	char			**ptr;
@@ -47,7 +48,7 @@ char	**ft_strsplit(char const *str, char c)
 	return (ptr);
 }
 
-char    **ft_strsplit2(char *str, char c)
+char					**ft_strsplit2(char *str, char c)
 {
 	char			**ptr;
 	unsigned int	cmp;
@@ -68,7 +69,7 @@ char    **ft_strsplit2(char *str, char c)
 	return (ptr);
 }
 
-char    **ft_nstrsplit2(char *str, char c, unsigned int count)
+char					**ft_nstrsplit2(char *str, char c, unsigned int count)
 {
 	char			**ptr;
 	unsigned int	cmp;
@@ -79,9 +80,9 @@ char    **ft_nstrsplit2(char *str, char c, unsigned int count)
 	ptr = ft_memalloc(sizeof(char *) * count + 1);
 	ptr[(++cmp)] = &str[0];
 	while (*(++str))
-    {
-        if (cmp >= count)
-            break ;
+	{
+		if (cmp >= count)
+			break ;
 		if (*str == c)
 		{
 			*str = 0;
@@ -89,7 +90,7 @@ char    **ft_nstrsplit2(char *str, char c, unsigned int count)
 				continue ;
 			ptr[(++cmp)] = &str[1];
 		}
-    }
+	}
 	ptr[(++cmp)] = NULL;
 	return (ptr);
 }

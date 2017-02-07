@@ -17,7 +17,7 @@
 t_stream		ft_stream_get_protocol(t_stream stream, char *buf, size_t n,
 										char *prot)
 {
-	char 	*str;
+	char	*str;
 	size_t	size;
 
 	(void)n;
@@ -37,7 +37,7 @@ t_stream		ft_stream_get_protocol(t_stream stream, char *buf, size_t n,
 	return (stream);
 }
 
-t_stream		ft_stream_get_expr(t_stream stream,	char *expr, int flags)
+t_stream		ft_stream_get_expr(t_stream stream, char *expr, int flags)
 {
 	char		*str;
 

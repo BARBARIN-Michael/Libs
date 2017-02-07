@@ -21,17 +21,18 @@
 ** Describe: Read complete stream
 ** ****************************************************************************
 */
+
 t_stream		ft_stream_read_full(t_stream stream, int flags)
 {
 	int			len;
 
 	stream = ft_stream_fill(stream);
 	len = stream.size - stream.cursor;
-    if (len > 0)
-    {
-	    stream.cursor += write(stream.fdout, &stream.buf[stream.cursor], len);
+	if (len > 0)
+	{
+		stream.cursor += write(stream.fdout, &stream.buf[stream.cursor], len);
 		return (ft_stream_read_full(stream, flags));
-    }
+	}
 	else
 		return (stream);
 }
@@ -44,10 +45,11 @@ t_stream		ft_stream_read_full(t_stream stream, int flags)
 ** Describe: Reads the not exploited buffer
 ** ****************************************************************************
 */
+
 t_stream		ft_stream_read(t_stream stream, int flags)
 {
 	stream = ft_stream_fill(stream);
-	write(stream.fdout,  &stream.buf[stream.cursor],
+	write(stream.fdout, &stream.buf[stream.cursor],
 			stream.size - stream.cursor);
 	if (FLAGS(flags, F_MOVE))
 	{
@@ -65,6 +67,7 @@ t_stream		ft_stream_read(t_stream stream, int flags)
 ** Describe: Reads the not exploited buffer size n
 ** ****************************************************************************
 */
+
 t_stream		ft_stream_read_n(t_stream stream, int n, int flags)
 {
 	stream = ft_stream_fill(stream);
@@ -88,6 +91,7 @@ t_stream		ft_stream_read_n(t_stream stream, int n, int flags)
 ** Describe: Reads the not exploited buffer until c characters
 ** ****************************************************************************
 */
+
 t_stream		ft_stream_read_c(t_stream stream, int c, int flags)
 {
 	char		*ptr;
@@ -99,10 +103,10 @@ t_stream		ft_stream_read_c(t_stream stream, int c, int flags)
 	{
 		if (FLAGS(flags, F_MOVE))
 			stream.cursor += write(stream.fdout, &stream.buf[stream.cursor],
-								ptr - stream.buf);
+					ptr - stream.buf);
 		else
 			write(stream.fdout, &stream.buf[stream.cursor],
-								ptr - stream.buf);
+					ptr - stream.buf);
 	}
 	return (stream);
 }
@@ -115,7 +119,7 @@ t_stream		ft_stream_read_c(t_stream stream, int c, int flags)
 ** Describe: Reads the not exploited buffer until expr
 ** ****************************************************************************
 */
-#include <stdio.h>
+
 t_stream		ft_stream_read_expr(t_stream stream, char *str, int flags)
 {
 	char	*ptr;
@@ -127,6 +131,7 @@ t_stream		ft_stream_read_expr(t_stream stream, char *str, int flags)
 				ft_strlen(&stream.buf[stream.cursor]));
 		return (ft_stream_read_expr(stream, str, flags));
 	}
-	stream.cursor += write(stream.fdout, &stream.buf[stream.cursor], ptr - &stream.buf[stream.cursor]);
+	stream.cursor += write(stream.fdout, &stream.buf[stream.cursor],
+			ptr - &stream.buf[stream.cursor]);
 	return (stream);
 }

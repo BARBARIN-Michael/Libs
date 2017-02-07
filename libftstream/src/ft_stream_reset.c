@@ -22,6 +22,7 @@
 ** Describe: reset get stream
 ** ****************************************************************************
 */
+
 t_stream		ft_stream_reset_get(t_stream stream)
 {
 	if (stream.get != NULL)

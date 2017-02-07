@@ -22,9 +22,10 @@
 ** Describe: Create new stream to save a long stream
 ** ****************************************************************************
 */
+
 t_stream		ft_stream_new(int fdin, int fdout, int fderr)
 {
-    t_stream stream;
+	t_stream		stream;
 
 	stream.fdin = fdin;
 	stream.fdout = fdout;
@@ -33,7 +34,7 @@ t_stream		ft_stream_new(int fdin, int fdout, int fderr)
 	stream.cursor = 0;
 	stream.get = NULL;
 	stream.buf[0] = '\0';
-    return (stream);
+	return (stream);
 }
 
 /*
@@ -47,6 +48,7 @@ t_stream		ft_stream_new(int fdin, int fdout, int fderr)
 ** Describe: Create new stream to save a long stream
 ** ****************************************************************************
 */
+
 t_stream		ft_stream_set_fdin(t_stream stream, int fdin)
 {
 	stream.fdin = fdin;
@@ -64,6 +66,7 @@ t_stream		ft_stream_set_fdin(t_stream stream, int fdin)
 ** Describe: Create new stream to save a long stream
 ** ****************************************************************************
 */
+
 t_stream		ft_stream_set_fdout(t_stream stream, int fdout)
 {
 	stream.fdout = fdout;
@@ -81,9 +84,9 @@ t_stream		ft_stream_set_fdout(t_stream stream, int fdout)
 ** Describe: Create new stream to save a long stream
 ** ****************************************************************************
 */
+
 t_stream		ft_stream_set_fderr(t_stream stream, int fderr)
 {
 	stream.fderr = fderr;
 	return (stream);
 }
-

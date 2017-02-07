@@ -26,7 +26,7 @@ char		*ft_strjoin_free(char *src, char *join, int flags)
 	ft_strcat(str, join);
 	if (src && FLAGS(flags, F_FREESRC))
 		free(src);
-	if (FLAGS(flags,F_FREEJOIN))
+	if (FLAGS(flags, F_FREEJOIN))
 		free(join);
 	return (str);
 }
