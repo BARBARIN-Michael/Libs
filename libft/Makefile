@@ -6,7 +6,7 @@
 #    By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 14:48:04 by mbarbari          #+#    #+#              #
-#    Updated: 2017/01/03 16:39:40 by barbare          ###   ########.fr        #
+#    Updated: 2017/02/13 12:21:19 by barbare          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -125,6 +125,6 @@ fclean: clean
 fcleanall: fclean
 	$(RM) $(EXE)
 
-re: fclean Objets all
+re: fclean all
 
 .PHONY: fclean obj all fcleanall clean
