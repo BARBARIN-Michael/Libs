@@ -6,7 +6,7 @@
 #    By: mbarbari <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2014/11/03 14:48:04 by mbarbari          #+#    #+#              #
-#    Updated: 2017/02/13 12:21:19 by barbare          ###   ########.fr        #
+#    Updated: 2017/02/23 10:48:17 by barbare          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,6 +71,7 @@ SRCS = 	src/ft_bzero.c			\
 		src/ft_putstr_c.c		\
 		src/ft_putendl.c		\
 		src/ft_putnbr.c		\
+		src/ft_putnbr_fd.c		\
 		src/ft_putchar_fd.c	\
 		src/ft_putstr_fd.c		\
 		src/ft_putendl_fd.c	\
